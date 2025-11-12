@@ -1,26 +1,16 @@
-/*Q99: Change the date format from dd/04/yyyy to dd-Apr-yyyy.
-
-Sample Test Cases:
-Input 1:
-15/04/2025
-Output 1:
-15-Apr-2025
-
-*/
-
 #include <stdio.h>
 
 int main() {
     int day, month, year;
+    char s1, s2;  // to store the '/' characters
 
-    // Input in the format dd/mm/yyyy
-    scanf("%d/%d/%d", &day, &month, &year);
+    // Input in format dd/mm/yyyy
+    scanf("%d%c%d%c%d", &day, &s1, &month, &s2, &year);
 
-    // Only handle month 04 as per the question
-    if (month == 4)
-        printf("%02d-Apr-%d\n", day, year);
+    if (month == 4 && s1 == '/' && s2 == '/')
+        printf("%02d-Apr-%d", day, year);
     else
-        printf("Invalid month\n");
+        printf("Invalid month or format");
 
     return 0;
 }
