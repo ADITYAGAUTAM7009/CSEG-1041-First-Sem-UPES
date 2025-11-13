@@ -1,6 +1,7 @@
 //Write a C program to add two numbers, take number from user
 #include<stdio.h>
-int main(){
+int main()
+{
 
     float num1,num2,sum=0;
 
